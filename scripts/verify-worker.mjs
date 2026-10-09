@@ -42,4 +42,6 @@ const unconfigured = await request("/api/checkout/stripe/create", {
 });
 assert.equal(unconfigured.status, 503);
 assert.deepEqual(await unconfigured.json(), { error: "payments_not_configured" });
-console.log(`Worker smoke check passed: ${exports.length} HTML routes, RSC navigation, images and sandbox API.`);
+assert.deepEqual(await (await request("/api/contact/config")).json(), { available: false });
+assert.equal((await request("/api/contact", { method: "POST", headers: { origin, "content-type": "application/json" }, body: "{}" })).status, 503);
+console.log(`Worker smoke check passed: ${exports.length} HTML routes, RSC navigation, images, contact and sandbox APIs.`);
