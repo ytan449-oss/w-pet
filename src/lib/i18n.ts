@@ -7,7 +7,7 @@ const en = {
     announcement: "New Zealand at heart. A world of little adventures.",
     collection: "The collection",
     story: "About",
-    craft: "Our craft",
+    craft: "Our Craft",
     care: "Care & FAQs",
     contact: "Say hello",
     bag: "Shopping bag",
@@ -85,7 +85,7 @@ const en = {
   pages: {
     collection: "Aotearoa Bloom Collection",
     story: "About",
-    craft: "Our craftsmanship",
+    craft: "Our Craft",
     care: "Care & FAQs",
     contact: "Contact W Pet",
     cart: "Your shopping bag",
