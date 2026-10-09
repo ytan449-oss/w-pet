@@ -4,6 +4,7 @@ import { ArrowIcon, FlowerIcon, HeartIcon, LeafIcon, PawIcon } from "@/component
 import { catalog, formatPrice } from "@/lib/catalog";
 import { getDictionary } from "@/lib/i18n";
 import { localePath } from "@/lib/routing";
+import { retailPriceLabel } from "@/lib/product";
 import type { Locale } from "@/types/catalog";
 
 export async function HomePage({ locale }: { locale: Locale }) {
@@ -42,14 +43,14 @@ export async function HomePage({ locale }: { locale: Locale }) {
         <div><p className="eyebrow">{d.collectionEyebrow}</p><h2 className="section-title" id="collection-title">{d.collectionTitle}<em>{d.collectionTitleAccent}</em></h2></div>
         <div><p className="section-description">{d.collectionDescription}</p><Link href={collectionPath} className="text-link mt-4">{d.allProducts}<ArrowIcon className="h-4 w-4" /></Link></div>
       </div>
-      <div className="product-grid">
+      <div className={`product-grid${products.length === 1 ? " single-product-grid" : ""}`}>
         {products.map((product, index) => <article key={product.id}>
           <Link className="product-visual" href={localePath(locale, `products/${product.slug}`)} aria-label={`${d.productDetails}: ${product.name[locale]} — ${product.color[locale]}`}>
             <span className="product-index">0{index + 1} / {d.productLabel}</span>
             <Image src={product.image} alt={product.imageAlt[locale]} fill sizes="(min-width: 1024px) 400px, (min-width: 640px) 30vw, calc(100vw - 40px)" />
             <span className="product-arrow" aria-hidden="true"><ArrowIcon className="h-4 w-4" /></span>
           </Link>
-          <div className="product-name-row"><h3><Link href={localePath(locale, `products/${product.slug}`)}>{product.name[locale]}</Link></h3><p>{formatPrice(product.priceMinor, locale, product.currency)}</p></div>
+          <div className="product-name-row"><h3><Link href={localePath(locale, `products/${product.slug}`)}>{product.name[locale]}</Link></h3><p>{product.priceMinor === null ? retailPriceLabel(locale) : formatPrice(product.priceMinor, locale, product.currency)}</p></div>
           <p className="product-color"><span className={`color-dot color-dot-${index}`} aria-hidden="true" />{product.color[locale]}</p>
         </article>)}
       </div>

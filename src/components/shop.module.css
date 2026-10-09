@@ -1,0 +1,34 @@
+.page { color: #365d82; }
+.hero { padding-block: 48px 50px; border-bottom: 1px solid #365d8228; }
+.kicker { font-size: 10px; line-height: 1.8; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 18px; }
+.title { font-family: var(--font-display); font-weight: 400; font-size: clamp(36px, 7vw, 65px); line-height: 1.15; letter-spacing: -.04em; max-width: 900px; }
+.intro { font-size: 15px; line-height: 1.9; max-width: 640px; margin-top: 20px; color: #4c6275; }
+.collection { padding-block: 44px 66px; }
+.collectionMeta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 24px; font-size: 12px; }
+.productCard { display: grid; gap: 32px; align-items: center; }
+.photo { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 8px; background: #f2efe8; }
+.photo img { object-fit: contain; }
+.imageLabel { display: inline-block; margin-top: 12px; font-size: 10px; color: #5b6d80; line-height: 1.8; }
+.productTitle { font-family: var(--font-display); font-size: clamp(29px, 4vw, 43px); font-weight: 400; line-height: 1.25; letter-spacing: -.025em; }
+.description { color: #4c6275; font-size: 14px; line-height: 1.95; margin-top: 18px; }
+.pricePending { font-size: 13px; line-height: 1.8; margin-top: 22px; }
+.colorLine { display: flex; gap: 12px; align-items: center; font-size: 12px; line-height: 1.7; margin-top: 22px; }
+.colorSwatch { width: 24px; height: 24px; border-radius: 50%; border: 1px solid #365d8230; display: inline-block; flex-shrink: 0; }
+.versions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-block: 28px; }
+.versionLink { display: flex; flex-direction: column; gap: 10px; border: 1px solid #365d822c; padding: 18px; border-radius: 4px; min-height: 100px; font-size: 13px; }
+.versionLink:hover { background: #e5edf1; }
+.versionLink small { font-size: 11px; line-height: 1.7; color: #5b6d80; }
+.factLine { display: flex; flex-wrap: wrap; gap: 12px 24px; font-size: 12px; line-height: 1.8; margin-block: 20px 26px; }
+.factLine span + span { border-left: 1px solid #365d8230; padding-left: 24px; }
+.customSection { background: #e5edf1; padding-block: 44px; }
+.customInner { display: grid; gap: 24px; }
+.sectionTitle { font-family: var(--font-display); font-size: clamp(25px, 4vw, 38px); font-weight: 400; line-height: 1.4; letter-spacing: -.02em; }
+.copy { color: #4c6275; font-size: 14px; line-height: 1.9; max-width: 660px; }
+.copy p + p { margin-top: 14px; }
+@media (min-width: 768px) {
+  .hero { padding-block: 72px 60px; }
+  .productCard { grid-template-columns: 1.1fr 1fr; gap: 60px; }
+  .collection { padding-block: 50px 80px; }
+  .customInner { grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: start; }
+  .customSection { padding-block: 60px; }
+}

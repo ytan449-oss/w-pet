@@ -15,4 +15,27 @@ Prompt:
 - `public/images/bandana-flax.svg`: Golden Meadow bandana illustration.
 - `public/images/botanical-garden.svg`: decorative garden illustration.
 
-These are original project-local SVG illustrations. Product names, colourways and indicative prices are demonstration data in `src/config/products.ts`, pending brand review. Final photographs and approved product specifications can replace them through the catalog adapter.
+These are original project-local SVG illustrations retained for provenance. The current catalog uses the owner-supplied hand-woven dog leash and no longer lists these bandana concepts.
+## Pink Mint Haze leash concept gallery
+
+The three images below were generated with the built-in imagegen tool and encoded as WebP without changing the composition. They are concept imagery, not product photographs or proof of specifications. Visible pages label them in both languages. Original assets were inspected for matching pastel pink/mint rope and swivel locking hardware; final real photographs can replace them.
+
+Saved paths:
+
+- `public/images/leash-pink-mint-overview.webp`
+- `public/images/leash-pink-mint-weave.webp`
+- `public/images/leash-pink-mint-locking-clip.webp`
+
+Final prompts:
+
+### View 1
+
+Use case: product-mockup. Asset type: W Pet ecommerce product concept photograph. Subject: one hand-woven dog leash made of a double-strand woven cotton-core rope, alternating soft pastel pink and mint green strands (Pink Mint Haze). Round braided rope; a simple braided wrist loop at one end; a single satin silver swivel locking snap hook with a visible screw-lock sleeve at the other. Premium but understated handcraft, realistic fibre texture. No additional colours or designs. Pale warm cream studio backdrop, very soft daylight, gentle realistic shadows, clean natural healing aesthetic. No text, brand logo, watermark, certification symbol, numbers, props, dogs, collars or packaging. This is a concept rendering, not a photo of a manufactured product. Composition: full leash product view from directly overhead, loosely arranged in a generous oval, wrist loop and swivel hook separated and fully visible, leash centred with ample breathing room. Square crop.
+
+### View 2
+
+Use case: product-mockup. Asset type: W Pet ecommerce product concept photograph. Subject: one hand-woven dog leash made of a double-strand woven cotton-core rope, alternating soft pastel pink and mint green strands (Pink Mint Haze). Round braided rope; a simple braided wrist loop at one end; a single satin silver swivel locking snap hook with a visible screw-lock sleeve at the other. Premium but understated handcraft, realistic fibre texture. No additional colours or designs. Pale warm cream studio backdrop, very soft daylight, gentle realistic shadows, clean natural healing aesthetic. No text, brand logo, watermark, certification symbol, numbers, props, dogs, collars or packaging. This is a concept rendering, not a photo of a manufactured product. Composition: product detail view from a 45-degree angle, focus on the braided wrist loop and intertwined pink and mint cotton-core rope, enough of the leash visible to establish context, shallow depth of field, square crop.
+
+### View 3
+
+Use case: product-mockup. Asset type: W Pet ecommerce product concept photograph. Subject: one hand-woven dog leash made of a double-strand woven cotton-core rope, alternating soft pastel pink and mint green strands (Pink Mint Haze). Round braided rope; a simple braided wrist loop at one end; a single satin silver swivel locking snap hook with a visible screw-lock sleeve at the other. Premium but understated handcraft, realistic fibre texture. No additional colours or designs. Pale warm cream studio backdrop, very soft daylight, gentle realistic shadows, clean natural healing aesthetic. No text, brand logo, watermark, certification symbol, numbers, props, dogs, collars or packaging. This is a concept rendering, not a photo of a manufactured product. Composition: close product detail from a low 30-degree angle focusing on the single satin silver rotating locking clip and the braided rope join, realistic hardware with screw-lock sleeve, restrained soft focus background, square crop.
