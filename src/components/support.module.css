@@ -30,9 +30,26 @@
 .reference { display: block; max-width: 100%; margin-block: 24px; padding: 18px 20px; font-size: 12px; line-height: 1.8; background: #e5edf1; border-radius: 4px; overflow-wrap: anywhere; }
 .confirmation p { font-size: 13px; line-height: 1.95; margin-top: 20px; color: #5b6d80; }
 .confirmation button { margin-top: 24px; }
+.policyUpdated { margin-top: 24px; font-size: 11px; line-height: 1.8; color: #5b6d80; }
+.policyNotice { padding: 18px 22px; margin-top: 24px; max-width: 760px; border-left: 2px solid #6b8ba5; background: #e5edf1; font-size: 12px; line-height: 1.95; }
+.policyLayout { display: grid; gap: 36px; padding-block: 38px 80px; }
+.policyNavigation { display: flex; flex-wrap: wrap; align-items: start; gap: 8px 20px; align-self: start; }
+.policyNavigation h2 { width: 100%; font-size: 11px; font-weight: 500; letter-spacing: .04em; margin-bottom: 8px; }
+.policyNavigation a { min-height: 40px; padding-block: 8px; font-size: 11px; line-height: 1.8; border-bottom: 1px solid #365d8225; }
+.policyNavigation a:hover { border-color: #365d82; }
+.policyArticle { min-width: 0; max-width: 780px; }
+.policySection { margin-bottom: 38px; scroll-margin-top: 120px; }
+.policySection h2 { font-family: var(--font-display); font-size: clamp(24px,3vw,30px); font-weight: 400; line-height: 1.45; }
+.policySection p { font-size: 13px; line-height: 2; color: #4c6275; margin-top: 18px; }
+.policyLinks { list-style: none; display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 20px; padding: 0; }
+.policyLinks a { display: inline-block; min-height: 40px; padding-block: 8px; font-size: 11px; line-height: 1.8; text-decoration: underline; text-underline-offset: 4px; }
+.policyClosing { display: flex; flex-wrap: wrap; gap: 22px 30px; padding-top: 25px; border-top: 1px solid #365d8225; }
 @media (min-width: 640px) { .formRow { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (min-width: 900px) {
   .hero { padding-block: 72px 52px; }
   .contactLayout { grid-template-columns: minmax(0,1.4fr) minmax(0,.9fr); gap: 65px; padding-block: 52px 90px; }
   .tips { padding: 32px; }
+  .policyLayout { grid-template-columns: minmax(180px, .65fr) minmax(0,2fr); gap: 65px; padding-block: 52px 90px; }
+  .policyNavigation { position: sticky; top: 130px; display: grid; gap: 8px; }
+  .policyNavigation a { border-bottom: 0; }
 }
