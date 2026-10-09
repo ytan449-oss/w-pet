@@ -21,9 +21,17 @@ export function ProductDetail({ locale, product }: { locale: Locale; product: Pr
   const [message, setMessage] = useState("");
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
-    if (query.get("version") === "lightweight") setVersion("lightweight");
-    if (query.get("length") === "200") setLengthCm(200);
-  }, []);
+    setVersion(query.get("version") === "lightweight" ? "lightweight" : "standard");
+    setLengthCm(query.get("length") === "200" ? 200 : 120);
+    const colour = query.get("colour");
+    setColorId(product.colors.some(value => value.id === colour) ? colour! : product.colors[0].id);
+  }, [locale, product]);
+  function selectOption(key: "version" | "length" | "colour", value: string) {
+    const url = new URL(window.location.href);
+    url.searchParams.set(key, value);
+    window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+    setMessage("");
+  }
   const variant = product.variants.find(v => v.version === version && v.lengthCm === lengthCm && v.colorId === colorId)!;
   const image = product.gallery[view];
   const validQuantity = Number.isInteger(quantity) && quantity >= 1 && quantity <= 10;
@@ -43,11 +51,11 @@ export function ProductDetail({ locale, product }: { locale: Locale; product: Pr
         <p className={styles.description}>{product.description[locale]}</p>
         <p className={styles.pricePending}>{retailPriceLabel(locale)}</p>
         <fieldset className={styles.optionGroup}><legend>{zh ? "配色" : "Colour"}</legend><div className={styles.optionButtons}>
-          {product.colors.map(color => <label className={styles.colorChoice} key={color.id}><input type="radio" name="colour" value={color.id} checked={colorId === color.id} onChange={() => {setColorId(color.id);setMessage("");}} /><span className={styles.colorSwatch} style={{background:`linear-gradient(135deg, ${color.swatch[0]} 50%, ${color.swatch[1]} 50%)`}} aria-hidden="true" /><span>{color.name[locale]}</span></label>)}
+          {product.colors.map(color => <label className={styles.colorChoice} key={color.id}><input type="radio" name="colour" value={color.id} checked={colorId === color.id} onChange={() => {setColorId(color.id);selectOption("colour",color.id);}} /><span className={styles.colorSwatch} style={{background:`linear-gradient(135deg, ${color.swatch[0]} 50%, ${color.swatch[1]} 50%)`}} aria-hidden="true" /><span>{color.name[locale]}</span></label>)}
           <a href="#custom-colours" className="text-link">{zh ? "定制配色" : "Custom colours"}</a>
         </div></fieldset>
-        <fieldset className={styles.optionGroup}><legend>{zh ? "版本" : "Version"}</legend><div className={styles.optionButtons}>{(["standard", "lightweight"] as const).map(value => <label className={styles.radioChoice} key={value}><input type="radio" name="version" value={value} checked={version === value} onChange={() => {setVersion(value);setMessage("");}} /><span>{versionLabel(value, locale)}</span></label>)}</div></fieldset>
-        <fieldset className={styles.optionGroup}><legend>{zh ? "长度" : "Length"}</legend><div className={styles.optionButtons}>{([120, 200] as const).map(value => <label className={styles.radioChoice} key={value}><input type="radio" name="length" value={value} checked={lengthCm === value} onChange={() => {setLengthCm(value);setMessage("");}} /><span>{lengthLabel(value)}</span></label>)}</div></fieldset>
+        <fieldset className={styles.optionGroup}><legend>{zh ? "版本" : "Version"}</legend><div className={styles.optionButtons}>{(["standard", "lightweight"] as const).map(value => <label className={styles.radioChoice} key={value}><input type="radio" name="version" value={value} checked={version === value} onChange={() => {setVersion(value);selectOption("version",value);}} /><span>{versionLabel(value, locale)}</span></label>)}</div></fieldset>
+        <fieldset className={styles.optionGroup}><legend>{zh ? "长度" : "Length"}</legend><div className={styles.optionButtons}>{([120, 200] as const).map(value => <label className={styles.radioChoice} key={value}><input type="radio" name="length" value={value} checked={lengthCm === value} onChange={() => {setLengthCm(value);selectOption("length",String(value));}} /><span>{lengthLabel(value)}</span></label>)}</div></fieldset>
         <p className={styles.selectedLoad} aria-live="polite">{versionLabel(version, locale)} · {zh ? "断裂载荷" : "Breaking load"} {variant.breakingLoadKg}kg</p>
         <div className={styles.addRow}><label className={styles.quantityLabel}>{zh ? "数量" : "Quantity"}<input type="number" inputMode="numeric" min={1} max={10} step={1} value={Number.isNaN(quantity) ? "" : quantity} onChange={event => {setQuantity(event.target.valueAsNumber);setMessage("");}} /></label><button type="button" className="button-primary" disabled={!validQuantity} onClick={() => {
           try { addToCart(variant.id, quantity); setMessage(zh ? "已加入测试购物车。" : "Added to your test cart."); }

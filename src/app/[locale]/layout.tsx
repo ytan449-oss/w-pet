@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { SiteShell } from "@/components/site-shell";
 import { siteConfig } from "@/config/site";
+import { siteOrigin } from "@/lib/site-origin";
 import { requireLocale } from "@/lib/i18n";
 import { locales } from "@/types/catalog";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL(siteOrigin()),
   title: "W Pet | An original New Zealand pet brand",
   description: siteConfig.description,
 };

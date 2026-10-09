@@ -1,7 +1,7 @@
 .page { color: #365d82; }
 .hero { padding-block: 48px 50px; border-bottom: 1px solid #365d8228; }
 .kicker { font-size: 10px; line-height: 1.8; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 18px; }
-.title { font-family: var(--font-display); font-weight: 400; font-size: clamp(36px, 7vw, 65px); line-height: 1.15; letter-spacing: -.04em; max-width: 900px; }
+.title { font-family: var(--font-display); font-weight: 400; font-size: clamp(36px, 7vw, 65px); line-height: 1.15; letter-spacing: -.04em; max-width: 900px; overflow-wrap: anywhere; }
 .intro { font-size: 15px; line-height: 1.9; max-width: 640px; margin-top: 20px; color: #4c6275; }
 .collection { padding-block: 44px 66px; }
 .collectionMeta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 24px; font-size: 12px; }
@@ -14,7 +14,7 @@
 .pricePending { font-size: 13px; line-height: 1.8; margin-top: 22px; }
 .colorLine { display: flex; gap: 12px; align-items: center; font-size: 12px; line-height: 1.7; margin-top: 22px; }
 .colorSwatch { width: 24px; height: 24px; border-radius: 50%; border: 1px solid #365d8230; display: inline-block; flex-shrink: 0; }
-.versions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-block: 28px; }
+.versions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-block: 28px; }
 .versionLink { display: flex; flex-direction: column; gap: 10px; border: 1px solid #365d822c; padding: 18px; border-radius: 4px; min-height: 100px; font-size: 13px; }
 .versionLink:hover { background: #e5edf1; }
 .versionLink small { font-size: 11px; line-height: 1.7; color: #5b6d80; }
@@ -43,7 +43,7 @@
 .selectedLoad { font-size: 12px; line-height: 1.8; margin-top: 22px; }
 .addRow { display: flex; align-items: end; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
 .quantityLabel { display: flex; flex-direction: column; gap: 10px; font-size: 11px; }
-.quantityLabel input { height: 52px; width: 80px; padding: 12px; color: inherit; background: transparent; border: 1px solid #365d8230; border-radius: 3px; }
+.quantityLabel input { height: 52px; width: 80px; padding: 12px; font-size: 16px; color: inherit; background: transparent; border: 1px solid #365d8230; border-radius: 3px; }
 .addRow button { flex-grow: 1; }
 .addRow button:disabled { opacity: .5; }
 .testNotice { color: #5b6d80; font-size: 11px; line-height: 1.8; margin-top: 16px; }
@@ -68,7 +68,7 @@
 .cartLineBody p { font-size: 11px; line-height: 1.8; color: #5b6d80; margin-top: 10px; }
 .cartControls { display: flex; flex-wrap: wrap; gap: 20px; align-items: end; margin-top: 18px; }
 .cartControls label { display: flex; flex-direction: column; gap: 8px; font-size: 11px; }
-.cartControls input { height: 44px; width: 75px; padding: 10px; color: inherit; background: transparent; border: 1px solid #365d8230; border-radius: 3px; }
+.cartControls input { height: 44px; width: 75px; padding: 10px; font-size: 16px; color: inherit; background: transparent; border: 1px solid #365d8230; border-radius: 3px; }
 .lineAmount { grid-column: 2; font-size: 13px; white-space: nowrap; }
 .orderSummary { align-self: start; padding: 28px; border-radius: 6px; background: #e5edf1; }
 .orderSummary h2 { font-family: var(--font-display); font-size: 27px; line-height: 1.4; font-weight: 400; margin-bottom: 28px; }
@@ -93,14 +93,14 @@
 .receiptDetails dd { overflow-wrap: anywhere; }
 @media (min-width: 768px) {
   .hero { padding-block: 72px 60px; }
-  .productCard { grid-template-columns: 1.1fr 1fr; gap: 60px; }
+  .productCard { grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap: 60px; }
   .collection { padding-block: 50px 80px; }
   .customInner { grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: start; }
   .customSection { padding-block: 60px; }
-  .productLayout { grid-template-columns: 1.1fr 1fr; gap: 60px; padding-bottom: 80px; }
+  .productLayout { grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap: 60px; padding-bottom: 80px; }
   .productOptions { padding-top: 14px; }
   .specSection { padding-block: 70px 40px; }
-  .cartLayout { grid-template-columns: 1.5fr 1fr; gap: 50px; padding-block: 52px 90px; }
+  .cartLayout { grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 50px; padding-block: 52px 90px; }
   .cartLine { grid-template-columns: 90px 1fr auto; gap: 22px; }
   .lineAmount { grid-column: auto; }
   .emptyState { grid-column: 1 / -1; }

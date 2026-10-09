@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const product = await catalog.getProduct(slug);
   if (!product) notFound();
-  return pageMetadata(locale, `${product.name[locale]} — ${product.color[locale]}`, `products/${slug}`);
+  return pageMetadata(locale, `${product.name[locale]} — ${product.color[locale]}`, `products/${slug}`, product.description[locale]);
 }
 export default async function ProductPage({ params }: Props) {
   const locale = await requireLocale(params);
