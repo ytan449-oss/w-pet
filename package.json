@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "next build --webpack && node scripts/build-worker.mjs && node scripts/verify-worker.mjs",
+    "dev:api": "node --env-file-if-exists=.env.local --import tsx scripts/dev-api.ts",
     "typecheck": "next typegen && tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts"
   },
@@ -16,6 +17,7 @@
     "@tailwindcss/postcss": "4.3.3"
   },
   "devDependencies": {
+    "esbuild": "0.28.2",
     "typescript": "^5.9.3",
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
