@@ -85,6 +85,12 @@
 .checkoutLine { border-top: 1px solid #365d8228; padding-block: 18px; }
 .checkoutLine p { font-size: 12px; line-height: 1.8; }
 .checkoutLine small { display: block; margin-block: 10px; color: #5b6d80; font-size: 10px; line-height: 1.8; }
+.resultIcon { width: 48px; height: 48px; margin-bottom: 28px; color: #6b8ba5; }
+.resultActions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px 28px; margin-top: 32px; }
+.receiptSection { padding-block: 38px 80px; border-top: 1px solid #365d8225; }
+.receiptDetails { display: grid; gap: 22px; margin-block: 30px; font-size: 12px; line-height: 1.9; }
+.receiptDetails dt { color: #5b6d80; margin-bottom: 6px; }
+.receiptDetails dd { overflow-wrap: anywhere; }
 @media (min-width: 768px) {
   .hero { padding-block: 72px 60px; }
   .productCard { grid-template-columns: 1.1fr 1fr; gap: 60px; }
