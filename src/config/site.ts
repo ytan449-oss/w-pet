@@ -6,6 +6,6 @@ export const siteConfig = {
   description: "W Pet is an original New Zealand pet brand. Discover the Aotearoa Bloom Collection.",
   // Replace only after a production domain is confirmed.
   url: "https://w-pet-aotearoa-bloom.redcrumb3.chatgpt.site",
-  // Real products, stock, shipping, and payments have not been configured yet.
+  // Live retail pricing, stock and shipping remain unconfirmed; sandbox checkout is separate.
   commerceEnabled: false,
 } as const;

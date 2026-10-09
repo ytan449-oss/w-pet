@@ -1,5 +1,6 @@
 import { brand, brandExcerpt } from "./brand";
 import { craft } from "./craft";
+import { products } from "./products";
 import type { LocalizedText } from "../types/catalog";
 
 interface BrandFaq {
@@ -37,3 +38,17 @@ export const careInformation = {
   status: "pending",
   instructions: null,
 } as const;
+
+/** Answers reuse approved catalog values without inventing washing guidance. */
+const productQuestions: { id: string; question: LocalizedText }[] = [
+  { id: "breaking-load", question: { en: "What are the version breaking loads?", zh: "两种版本的断裂载荷分别是多少？" } },
+  { id: "length", question: { en: "Which lengths are available?", zh: "有哪些长度可选？" } },
+  { id: "color", question: { en: "Which colour and custom-colour options are supplied?", zh: "有哪些配色及定制选择？" } },
+  { id: "material", question: { en: "What material performance is specified?", zh: "已提供的材质性能是什么？" } },
+  { id: "outdoors", question: { en: "Which outdoor settings is it designed for?", zh: "适配哪些户外场景？" } },
+];
+export const productFaqs = productQuestions.map(item => {
+  const specification = products[0].specifications.find(row => row.id === item.id);
+  if (!specification) throw new Error("Product FAQ requires an approved catalog specification.");
+  return { ...item, answer: specification.value };
+});
