@@ -17,3 +17,19 @@ export function CompanionIllustration() {
     })}
   </svg>;
 }
+
+/** An abstract weave motif; it does not document the production process. */
+export function WeaveIllustration() {
+  const warp = [126, 155, 184, 213, 242, 271, 300, 329];
+  const weft = [111, 140, 169, 198, 227, 256, 285, 314];
+  return <svg viewBox="0 0 460 420" fill="none" aria-hidden="true" focusable="false">
+    <rect x="54" y="22" width="352" height="368" rx="176" fill="#e5edf1" />
+    <path d="M114 85c43-20 157-20 225 0l16 235c-63 28-179 32-253 0Z" fill="#fbf8f1" />
+    {warp.map((x, i) => <path key={x} d={`M${x} 73C${x - 15} 138 ${x + 19} 247 ${x} 344`} stroke={i % 3 === 0 ? "#b79b81" : "#8da6b7"} strokeWidth="12" strokeLinecap="round" />)}
+    {weft.map((y, i) => <path key={y} d={`M103 ${y}C171 ${y + 20} 271 ${y - 17} 352 ${y}`} stroke={i % 3 === 1 ? "#365d82" : "#cad9df"} strokeWidth="12" strokeLinecap="round" />)}
+    {warp.flatMap((x, i) => weft.filter((_, j) => (i + j) % 2 === 0).map(y => <path key={`${x}-${y}`} d={`M${x} ${y - 7}v14`} stroke={i % 3 === 0 ? "#b79b81" : "#8da6b7"} strokeWidth="12" />))}
+    <path d="M118 352c-7 10-12 18-10 25m46-25c-4 10-6 17-4 26m151-26c4 10 8 18 6 25m28-28c7 11 12 20 10 29" stroke="#8da6b7" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="362" cy="81" r="27" fill="#fbf8f1" />
+    <path d="M351 81h22m-11-11v22m-8-19 16 16m0-16-16 16" stroke="#b79b81" strokeWidth="1.5" strokeLinecap="round" />
+  </svg>;
+}
