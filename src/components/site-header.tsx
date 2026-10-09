@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { BagIcon } from "@/components/icons";
+import { brand } from "@/config/brand";
 import { getDictionary } from "@/lib/i18n";
 import { localePath, switchLocalePath } from "@/lib/routing";
 import type { Locale } from "@/types/catalog";
@@ -33,7 +34,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <div className="announcement">{d.announcement}<span aria-hidden="true"> ✳</span></div>
+      <div className="announcement">{locale === "en" ? brand.sloganEn : brand.sloganZh}<span aria-hidden="true"> ✳</span></div>
       <header className="site-header">
         <div className="page-width flex min-h-22 items-center justify-between gap-4">
           <Link href={localePath(locale)} className="wordmark" aria-label={locale === "en" ? "W Pet home" : "W Pet 首页"} onClick={() => setOpen(false)}>W <span>Pet</span><i aria-hidden="true">✳</i></Link>

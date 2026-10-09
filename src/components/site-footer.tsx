@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FlowerIcon } from "@/components/icons";
+import { brand } from "@/config/brand";
 import { getDictionary } from "@/lib/i18n";
 import { localePath } from "@/lib/routing";
 import type { Locale } from "@/types/catalog";
@@ -10,8 +11,8 @@ export function SiteFooter({ locale }: { locale: Locale }) {
     <div className="page-width footer-grid">
       <div>
         <Link href={localePath(locale)} className="wordmark footer-wordmark">W <span>Pet</span><i aria-hidden="true">✳</i></Link>
-        <p className="footer-tagline">{d.footerTagline}</p>
-        <p className="max-w-80 text-sm leading-7 text-muted">{d.footerDescription}</p>
+        <p className="footer-tagline" lang="en-NZ">{brand.sloganEn}</p>
+        <p className="max-w-80 text-sm leading-7 text-muted" lang="zh-CN">{brand.sloganZh}</p>
       </div>
       <nav aria-label={d.explore}>
         <h2 className="footer-heading">{d.explore}</h2>
@@ -26,7 +27,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         <Link href={localePath(locale, "privacy")}>{d.privacy}</Link>
         <Link href={localePath(locale, "terms")}>{d.terms}</Link>
       </nav>
-      <div className="footer-flower"><FlowerIcon className="h-18 w-18 text-rose" /><p>{d.origin}</p></div>
+      <div className="footer-flower"><FlowerIcon className="h-18 w-18 text-ink" /><p>Designed in Aotearoa</p></div>
     </div>
     <div className="page-width footer-bottom"><p>© {new Date().getFullYear()} {d.copyright}</p><p>Aotearoa · New Zealand</p></div>
   </footer>;

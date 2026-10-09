@@ -2,10 +2,10 @@
 
 @theme {
   --color-cream: #fbf8f1;
-  --color-ink: #283d2e;
-  --color-sage: #64785c;
+  --color-ink: #365d82;
+  --color-sage: #647b88;
   --color-rose: #e5ae9d;
-  --color-muted: #616a5c;
+  --color-muted: #5b6d80;
   --font-sans: "Manrope", "Arial", "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-display: "Fraunces", "Georgia", "Songti SC", "STSong", serif;
 }
@@ -44,7 +44,7 @@ main:focus { outline: none; }
 .eyebrow { font-size: 10px; font-weight: 500; letter-spacing: .17em; line-height: 1.8; }
 .button-primary, .button-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 24px; min-height: 52px; padding: 14px 22px; border-radius: 3px; font-size: 12px; line-height: 1.5; transition: background .2s, transform .2s; }
 .button-primary { background: var(--color-ink); color: var(--color-cream); border: 1px solid var(--color-ink); }
-.button-primary:hover { background: #405741; transform: translateY(-2px); }
+.button-primary:hover { background: #284965; transform: translateY(-2px); }
 .button-secondary { border: 1px solid #283d2e30; }
 .button-secondary:hover { background: #283d2e08; }
 .text-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 44px; font-size: 12px; border-bottom: 1px solid #283d2e55; padding-block: 8px; }

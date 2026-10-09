@@ -6,7 +6,7 @@ const en = {
   site: {
     announcement: "New Zealand at heart. A world of little adventures.",
     collection: "The collection",
-    story: "Our story",
+    story: "About",
     craft: "Our craft",
     care: "Care & FAQs",
     contact: "Say hello",
@@ -84,7 +84,7 @@ const en = {
   },
   pages: {
     collection: "Aotearoa Bloom Collection",
-    story: "Our story",
+    story: "About",
     craft: "Our craftsmanship",
     care: "Care & FAQs",
     contact: "Contact W Pet",
