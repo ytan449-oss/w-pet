@@ -32,6 +32,26 @@
 .craftLabels svg { width: 26px; height: 26px; color: #6b8ba5; }
 .devotion { padding-block: 36px 68px; max-width: 820px; }
 .devotion p { font-family: var(--font-display); font-size: clamp(22px, 3vw, 30px); line-height: 1.7; }
+.faqHero { padding-block: 56px 64px; max-width: 940px; }
+.topicNavigation { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.topicNavigation a { padding: 12px 20px; border: 1px solid var(--brand-line); border-radius: 30px; font-size: 13px; min-height: 44px; }
+.topicNavigation a:hover { background: var(--brand-soft); }
+.careSection { background: var(--brand-soft); padding-block: 52px; }
+.careInner { display: grid; gap: 32px; }
+.careState { display: flex; gap: 20px; align-items: flex-start; padding-top: 24px; border-top: 1px solid var(--brand-line); }
+.careState svg { width: 36px; height: 36px; stroke: #6b8ba5; }
+.careState h3 { font-family: var(--font-display); font-size: 24px; line-height: 1.4; font-weight: 400; }
+.careState p { color: #4c6275; font-size: 14px; line-height: 1.9; margin-top: 14px; }
+.faqSection { padding-block: 60px 80px; display: grid; gap: 32px; }
+.faqList { border-top: 1px solid var(--brand-line); min-width: 0; }
+.faqItem { border-bottom: 1px solid var(--brand-line); scroll-margin-top: 140px; }
+.faqItem summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 76px; padding-block: 22px; font-size: 16px; line-height: 1.6; cursor: pointer; list-style: none; }
+.faqItem summary::-webkit-details-marker { display: none; }
+.faqItem summary::after { content: '+'; font-size: 22px; font-weight: 300; flex-shrink: 0; }
+.faqItem[open] summary::after { content: '−'; }
+.faqItem summary:hover { color: #284965; }
+.faqAnswer { padding-bottom: 28px; padding-right: 20px; font-size: 15px; color: #4c6275; line-height: 1.95; overflow-wrap: break-word; }
+.faqRelated { display: flex; flex-wrap: wrap; gap: 20px 32px; }
 @media (min-width: 768px) {
   .hero { grid-template-columns: 1.2fr 1fr; gap: 60px; padding-block: 72px 90px; }
   .heroArt { width: min(100%, 440px); }
@@ -47,4 +67,9 @@
   .craftDetails { grid-template-columns: .75fr 1.4fr; gap: 70px; padding-block: 80px 44px; }
   .craftLabels { justify-content: space-between; }
   .devotion { padding-block: 56px 90px; }
+  .faqHero { padding-block: 80px 90px; }
+  .careInner, .faqSection { grid-template-columns: .75fr 1.4fr; gap: 70px; }
+  .careSection { padding-block: 70px; }
+  .faqSection { padding-block: 80px 96px; }
+  .careState { padding-top: 0; border-top: 0; }
 }
