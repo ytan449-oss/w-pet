@@ -1,4 +1,5 @@
-import { PagePlaceholder } from "@/components/page-placeholder";
+import { CollectionPageContent } from "@/components/collection-page";
+import { catalog } from "@/lib/catalog";
 import { getDictionary, requireLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -9,6 +10,5 @@ export async function generateMetadata({ params }: Props) {
 }
 export default async function CollectionPage({ params }: Props) {
   const locale = await requireLocale(params);
-  const d = getDictionary(locale);
-  return <PagePlaceholder locale={locale} title={d.pages.collection} description={d.placeholder.collectionBody} />;
+  return <CollectionPageContent locale={locale} products={await catalog.getProducts("aotearoa-bloom")} />;
 }

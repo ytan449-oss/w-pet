@@ -20,6 +20,6 @@ export function formatPrice(priceMinor: number, locale: Locale, currency = "NZD"
     style: "currency",
     currency,
     currencyDisplay: "code",
-    maximumFractionDigits: 0,
+    maximumFractionDigits: 2,
   }).format(priceMinor / 100);
 }
