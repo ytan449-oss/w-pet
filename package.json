@@ -8,6 +8,7 @@
     "dev:api": "node --env-file-if-exists=.env.local --import tsx scripts/dev-api.ts",
     "typecheck": "next typegen && tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
+    "audit": "python3 scripts/audit-export.py",
     "db:generate": "drizzle-kit generate",
     "db:local": "node --import tsx scripts/migrate-local-db.ts"
   },

@@ -2,7 +2,7 @@ import { build } from "esbuild";
 import { readdir, readFile, mkdir, copyFile, stat } from "node:fs/promises";
 import path from "node:path";
 
-const types={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".css":"text/css; charset=utf-8",".json":"application/json; charset=utf-8",".svg":"image/svg+xml",".webp":"image/webp",".png":"image/png",".ico":"image/x-icon",".woff2":"font/woff2",".txt":"text/x-component; charset=utf-8"};
+const types={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".css":"text/css; charset=utf-8",".json":"application/json; charset=utf-8",".xml":"application/xml; charset=utf-8",".svg":"image/svg+xml",".webp":"image/webp",".png":"image/png",".ico":"image/x-icon",".woff2":"font/woff2",".txt":"text/x-component; charset=utf-8"};
 const assets={};
 async function collect(directory) {
   for(const entry of await readdir(directory,{withFileTypes:true})) {

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { siteConfig } from "@/config/site";
+import { pageDescriptions } from "@/config/seo";
 import { localePath } from "@/lib/routing";
 import type { Locale } from "@/types/catalog";
 
 export function pageMetadata(locale: Locale, title: string, path = "", description?: string): Metadata {
+  const summary = description ?? pageDescriptions[path]?.[locale];
+  if (!summary) throw new Error(`Missing page description: ${locale}/${path}`);
   return {
     title: `${title} | W Pet`,
-    description: description ?? (locale === "zh" ? "W Pet，新西兰原创宠物品牌。探索 Aotearoa Bloom 花卉系列。" : siteConfig.description),
+    description: summary,
     alternates: {
       canonical: localePath(locale, path),
       languages: {
@@ -17,6 +19,7 @@ export function pageMetadata(locale: Locale, title: string, path = "", descripti
     },
     openGraph: {
       title: `${title} | W Pet`,
+      description: summary,
       siteName: "W Pet",
       locale: locale === "en" ? "en_NZ" : "zh_CN",
       type: "website",
