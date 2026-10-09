@@ -13,6 +13,8 @@ An English-first, Chinese-secondary storefront for W Pet, an original New Zealan
 
 Production builds export Next.js to `out/`, then embed those assets and the server payment/contact handlers in `dist/server/index.js`, a Worker ESM entrypoint. Worker artifact smoke checks exercise every HTML route, RSC navigation, image delivery and API routing. Serving `out/` alone does not provide the contact/payment APIs; `next start` is not used with static export.
 
+The separate `npm run build:vercel` profile produces a native Next.js server/API build for Vercel and verifies its routes. Its consultation API needs the owner's external durable D1 configuration; the Sites binding does not transfer between hosts. See [Vercel deployment](docs/vercel-deployment.md) for account, environment, access and database requirements. A successful local native build is not a hosted Vercel preview.
+
 ## Implemented routes
 
 English is the entry language at `/`. Every storefront page has `/en/` and `/zh/` versions:
@@ -33,6 +35,8 @@ English is the entry language at `/`. Every storefront page has `/en/` and `/zh/
 | Preview terms | `/terms/` |
 
 No requested storefront page remains a full-page placeholder. Unknown routes render a localized 404. Language switching preserves route/query/hash and cart selections; mobile navigation supports keyboard use and Escape. Pages remain `noindex` while the Site is private and commercial details await approval.
+
+Every localized page has a distinct title/description and reciprocal language/canonical metadata. `/sitemap.xml` includes the 18 public-content locale URLs, excluding browser-specific cart, checkout and result pages. `npm run audit` checks the actual static export's SEO, language links, local images/styles and sitemap; CI checks the Worker and native Vercel builds.
 
 ## Catalog and brand content
 

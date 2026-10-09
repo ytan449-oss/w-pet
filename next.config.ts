@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
 };
 
 export default function config(phase: string): NextConfig {
+  if (process.env.WPET_BUILD_TARGET === "vercel" || process.env.VERCEL === "1") return {
+    ...nextConfig,
+    output: undefined,
+    // The Node route is omitted from Worker static exports, included in native Next builds.
+    pageExtensions: ["vercel.ts", "tsx", "ts"],
+  };
   if (phase === PHASE_DEVELOPMENT_SERVER) return {
     ...nextConfig,
     output: undefined,

@@ -1,5 +1,5 @@
 import { PolicyPage } from "@/components/policy-page";
-import { privacyPolicy } from "@/config/privacy";
+import { privacyPolicyForHost } from "@/config/privacy-host";
 import { getDictionary, requireLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -10,5 +10,5 @@ export async function generateMetadata({ params }: Props) {
 }
 export default async function Page({ params }: Props) {
   const locale = await requireLocale(params);
-  return <PolicyPage locale={locale} policy={privacyPolicy} />;
+  return <PolicyPage locale={locale} policy={privacyPolicyForHost()} />;
 }
