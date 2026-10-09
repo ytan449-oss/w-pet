@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import { PagePlaceholder } from "@/components/page-placeholder";
+import { ProductDetail } from "@/components/product-detail";
 import { products } from "@/config/products";
 import { catalog } from "@/lib/catalog";
-import { getDictionary, requireLocale } from "@/lib/i18n";
+import { requireLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -20,5 +20,5 @@ export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
   const product = await catalog.getProduct(slug);
   if (!product) notFound();
-  return <PagePlaceholder locale={locale} title={`${product.name[locale]} — ${product.color[locale]}`} description={getDictionary(locale).placeholder.productBody} />;
+  return <ProductDetail locale={locale} product={product} />;
 }
