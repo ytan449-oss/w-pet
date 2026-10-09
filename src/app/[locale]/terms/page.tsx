@@ -1,4 +1,5 @@
-import { PagePlaceholder } from "@/components/page-placeholder";
+import { PolicyPage } from "@/components/policy-page";
+import { previewTerms } from "@/config/terms";
 import { getDictionary, requireLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -9,6 +10,5 @@ export async function generateMetadata({ params }: Props) {
 }
 export default async function Page({ params }: Props) {
   const locale = await requireLocale(params);
-  const d = getDictionary(locale);
-  return <PagePlaceholder locale={locale} title={d.pages.terms} />;
+  return <PolicyPage locale={locale} policy={previewTerms} />;
 }

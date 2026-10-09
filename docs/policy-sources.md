@@ -11,3 +11,12 @@ Privacy references:
 - Cloudflare D1 location configuration — https://developers.cloudflare.com/d1/configuration/data-location/
 
 The contact form requires an acknowledgement and stores its notice version. This is not a blanket waiver of privacy rights or consent to marketing. An overseas disclosure assessment and operator details must be confirmed before public collection/trading. The code does not implement an automatic inquiry-deletion schedule.
+
+Terms references:
+
+- NZ Consumer Protection, Consumer Guarantees Act — https://www.consumerprotection.govt.nz/general-help/consumer-laws/consumer-guarantees-act
+- NZ Consumer Protection, Fair Trading Act — https://www.consumerprotection.govt.nz/general-help/consumer-laws/fair-trading-act
+- Stripe privacy policy — https://stripe.com/privacy
+- PayPal NZ privacy statement — https://www.paypal.com/nz/legalhub/paypal/privacy-full
+
+The preview terms do not invent a shipping promise, tax treatment, returns window, custom-production minimum, exclusive court venue or a waiver of mandatory consumer protections. Live commercial terms require approved operator information, pricing and fulfilment/returns details. These draft pages are not a finding that a production store is legally compliant.
