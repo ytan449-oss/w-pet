@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="560" viewBox="0 0 600 560">
+<defs>
+<linearGradient id="bg" x2=".7" y2="1"><stop stop-color="#f5eedc"/><stop offset="1" stop-color="#eee4c8"/></linearGradient>
+<linearGradient id="fabric" x1="0" x2="1" y2="1"><stop stop-color="#f9f6eb"/><stop offset=".55" stop-color="#eee4c8"/><stop offset="1" stop-color="#f5eedc"/></linearGradient>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="13"/></filter>
+<pattern id="bloom" width="100" height="106" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)">
+<path d="M34 79Q59 64 54 26M53 54Q35 39 32 33M52 47Q69 37 73 31" fill="none" stroke="#718158" stroke-width="1.5"/>
+<path d="M53 66q-22-2-19-17 14 2 19 17M54 51q22-1 24-17-16-1-24 17" fill="#718158" opacity=".8"/>
+<g fill="#d9b66b" transform="translate(53 27)"><ellipse cy="-8" rx="4.5" ry="7"/><ellipse cy="8" rx="4.5" ry="7"/><ellipse cx="-8" rx="7" ry="4.5"/><ellipse cx="8" rx="7" ry="4.5"/><ellipse cx="-6" cy="-6" rx="4" ry="6" transform="rotate(-45 -6 -6)"/><ellipse cx="6" cy="6" rx="4" ry="6" transform="rotate(-45 6 6)"/><circle r="3.5" fill="#e8d195"/></g>
+<g fill="#d9b66b" opacity=".7" transform="translate(78 89)"><ellipse cy="-4" rx="2.5" ry="4"/><ellipse cy="4" rx="2.5" ry="4"/><ellipse cx="-4" rx="4" ry="2.5"/><ellipse cx="4" rx="4" ry="2.5"/><circle r="2" fill="#edda99"/></g></pattern>
+<clipPath id="cloth"><path d="M101 171Q300 111 494 163L314 435Q303 449 291 435Z"/></clipPath>
+</defs>
+<rect width="600" height="560" fill="url(#bg)"/>
+<ellipse cx="298" cy="414" rx="184" ry="20" fill="#595c48" opacity=".16" filter="url(#shadow)"/>
+<g transform="rotate(-6 300 280)"><path d="M101 171Q300 111 494 163L314 435Q303 449 291 435Z" fill="url(#fabric)"/>
+<g clip-path="url(#cloth)"><rect x="70" y="115" width="460" height="350" fill="url(#bloom)" opacity=".85"/><path d="M109 168Q299 160 306 433" fill="none" stroke="#fff" opacity=".24" stroke-width="24"/><path d="M118 175Q260 179 301 432" fill="none" stroke="#766a4d" opacity=".055" stroke-width="9"/></g>
+<path d="M110 177Q300 119 485 169L307 430Q303 437 297 430Z" fill="none" stroke="#8d8269" stroke-width="1" stroke-dasharray="3 4" opacity=".45"/>
+<path d="M101 171Q300 111 494 163" fill="none" stroke="#fff" stroke-width="6" opacity=".45"/></g>
+</svg>

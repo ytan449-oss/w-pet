@@ -1,4 +1,4 @@
-import { PagePlaceholder } from "@/components/page-placeholder";
+import { HomePage } from "@/components/home-page";
 import { requireLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -9,5 +9,5 @@ export async function generateMetadata({ params }: Props) {
 }
 export default async function Home({ params }: Props) {
   const locale = await requireLocale(params);
-  return <PagePlaceholder locale={locale} title="W Pet" />;
+  return <HomePage locale={locale} />;
 }
