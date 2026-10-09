@@ -38,7 +38,7 @@ export function CollectionPageContent({ locale, products }: { locale: Locale; pr
     </section>
     <section className={styles.customSection} aria-labelledby="collection-colour-heading"><div className={`${styles.customInner} page-width`}>
       <h2 className={styles.sectionTitle} id="collection-colour-heading">{zh ? "定制配色" : "Custom colours"}</h2>
-      <div className={styles.copy}><p>{zh ? "支持小批量定制配色。" : "Small-batch custom colours are available."}</p><Link href={localePath(locale, "contact")} className="text-link mt-5">{zh ? "联系 W Pet" : "Contact W Pet"}<ArrowIcon className="h-4 w-4" /></Link></div>
+      <div className={styles.copy}><p>{zh ? "支持小批量定制配色。" : "Small-batch custom colours are available."}</p><Link href={`${localePath(locale, "contact")}?topic=custom-colours`} className="text-link mt-5">{zh ? "联系 W Pet" : "Contact W Pet"}<ArrowIcon className="h-4 w-4" /></Link></div>
     </div></section>
   </div>;
 }

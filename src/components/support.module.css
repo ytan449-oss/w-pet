@@ -1,0 +1,38 @@
+.page { color: #365d82; }
+.hero { padding-block: 52px 38px; border-bottom: 1px solid #365d8220; }
+.kicker { font-size: 10px; line-height: 1.8; letter-spacing: .12em; text-transform: uppercase; }
+.title { font-family: var(--font-display); font-size: clamp(38px, 6vw, 62px); line-height: 1.2; letter-spacing: -.04em; font-weight: 400; margin-top: 18px; overflow-wrap: anywhere; }
+.intro { max-width: 640px; font-size: 14px; line-height: 1.95; margin-top: 22px; color: #5b6d80; }
+.slogan { font-size: 12px; line-height: 1.9; margin-top: 22px; }
+.contactLayout { display: grid; gap: 42px; padding-block: 42px 80px; }
+.form { display: grid; gap: 24px; min-width: 0; }
+.formRow { display: grid; gap: 24px; }
+.field { display: grid; gap: 10px; font-size: 12px; line-height: 1.8; }
+.field input, .field select, .field textarea { min-width: 0; width: 100%; padding: 13px 14px; min-height: 48px; border: 1px solid #365d8240; border-radius: 4px; color: #365d82; background: #fffdf8; font: inherit; }
+.field textarea { resize: vertical; min-height: 170px; line-height: 1.9; }
+.field small, .helper { font-size: 11px; line-height: 1.9; color: #5b6d80; }
+.consent { display: flex; gap: 12px; align-items: flex-start; font-size: 11px; line-height: 1.9; }
+.consent input { accent-color: #365d82; flex-shrink: 0; width: 16px; height: 16px; margin-top: 4px; }
+.consent a { text-decoration: underline; text-underline-offset: 4px; }
+.submitRow { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+.submitRow button:disabled { opacity: .55; }
+.trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.error { font-size: 12px; line-height: 1.9; color: #8b4447; }
+.tips { align-self: start; background: #e5edf1; border-radius: 6px; padding: 28px; }
+.tips h2, .confirmation h2 { font-family: var(--font-display); font-size: 30px; font-weight: 400; line-height: 1.4; }
+.tip { padding-block: 24px; border-bottom: 1px solid #365d8225; }
+.tip:last-child { border-bottom: 0; padding-bottom: 0; }
+.tip h3 { font-size: 13px; font-weight: 500; line-height: 1.7; }
+.tip p { margin-top: 12px; font-size: 12px; line-height: 1.95; color: #5b6d80; }
+.tip a { margin-top: 16px; }
+.confirmation { min-height: 330px; padding-block: 14px; }
+.confirmation svg { width: 46px; height: 46px; margin-bottom: 25px; }
+.reference { display: block; max-width: 100%; margin-block: 24px; padding: 18px 20px; font-size: 12px; line-height: 1.8; background: #e5edf1; border-radius: 4px; overflow-wrap: anywhere; }
+.confirmation p { font-size: 13px; line-height: 1.95; margin-top: 20px; color: #5b6d80; }
+.confirmation button { margin-top: 24px; }
+@media (min-width: 640px) { .formRow { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (min-width: 900px) {
+  .hero { padding-block: 72px 52px; }
+  .contactLayout { grid-template-columns: minmax(0,1.4fr) minmax(0,.9fr); gap: 65px; padding-block: 52px 90px; }
+  .tips { padding: 32px; }
+}

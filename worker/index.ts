@@ -1,9 +1,11 @@
 import { assets } from "wpet:assets";
 import { handleCheckout, type CheckoutEnv } from "../src/server/checkout";
+import { handleContact, type ContactEnv } from "../src/server/contact";
 
 export default {
-  async fetch(request: Request, env: CheckoutEnv): Promise<Response> {
+  async fetch(request: Request, env: CheckoutEnv & ContactEnv): Promise<Response> {
     const url=new URL(request.url);
+    if(url.pathname === "/api/contact" || url.pathname.startsWith("/api/contact/")) return handleContact(request,env);
     if(url.pathname.startsWith("/api/")) return handleCheckout(request,env);
     if(request.method!=="GET" && request.method!=="HEAD") return new Response("Method not allowed",{status:405,headers:{allow:"GET, HEAD"}});
     let path: string;
