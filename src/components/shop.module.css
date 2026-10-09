@@ -57,6 +57,24 @@
 .certification svg { width: 40px; height: 44px; color: #6b8ba5; }
 .certification h2 { font-size: 14px; font-weight: 500; line-height: 1.7; }
 .certification p { font-size: 12px; line-height: 1.9; color: #5b6d80; margin-top: 8px; }
+.cartLayout { display: grid; gap: 32px; padding-block: 40px 80px; }
+.emptyState { min-height: 220px; padding-top: 20px; }
+.cartLine { display: grid; grid-template-columns: 76px 1fr; gap: 20px; padding-block: 26px; border-bottom: 1px solid #365d8228; }
+.cartLine:first-child { padding-top: 0; }
+.cartImage { display: block; }
+.cartImage img { width: 100%; height: auto; border-radius: 4px; }
+.cartLineBody { min-width: 0; }
+.cartLineBody h2 { font-family: var(--font-display); font-size: 20px; font-weight: 400; line-height: 1.45; }
+.cartLineBody p { font-size: 11px; line-height: 1.8; color: #5b6d80; margin-top: 10px; }
+.cartControls { display: flex; flex-wrap: wrap; gap: 20px; align-items: end; margin-top: 18px; }
+.cartControls label { display: flex; flex-direction: column; gap: 8px; font-size: 11px; }
+.cartControls input { height: 44px; width: 75px; padding: 10px; color: inherit; background: transparent; border: 1px solid #365d8230; border-radius: 3px; }
+.lineAmount { grid-column: 2; font-size: 13px; white-space: nowrap; }
+.orderSummary { align-self: start; padding: 28px; border-radius: 6px; background: #e5edf1; }
+.orderSummary h2 { font-family: var(--font-display); font-size: 27px; line-height: 1.4; font-weight: 400; margin-bottom: 28px; }
+.summaryRow { display: flex; gap: 20px; align-items: baseline; justify-content: space-between; padding-block: 16px; border-block: 1px solid #365d8228; font-size: 13px; line-height: 1.7; }
+.summaryRow strong { font-weight: 500; white-space: nowrap; }
+.cartError { grid-column: 1 / -1; font-size: 13px; color: #8b4447; line-height: 1.8; }
 @media (min-width: 768px) {
   .hero { padding-block: 72px 60px; }
   .productCard { grid-template-columns: 1.1fr 1fr; gap: 60px; }
@@ -66,4 +84,8 @@
   .productLayout { grid-template-columns: 1.1fr 1fr; gap: 60px; padding-bottom: 80px; }
   .productOptions { padding-top: 14px; }
   .specSection { padding-block: 70px 40px; }
+  .cartLayout { grid-template-columns: 1.5fr 1fr; gap: 50px; padding-block: 52px 90px; }
+  .cartLine { grid-template-columns: 90px 1fr auto; gap: 22px; }
+  .lineAmount { grid-column: auto; }
+  .emptyState { grid-column: 1 / -1; }
 }

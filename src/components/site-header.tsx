@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { BagIcon } from "@/components/icons";
 import { brand } from "@/config/brand";
+import { useCartState } from "@/components/use-cart";
 import { getDictionary } from "@/lib/i18n";
 import { localePath, switchLocalePath } from "@/lib/routing";
 import type { Locale } from "@/types/catalog";
@@ -12,6 +13,8 @@ import type { Locale } from "@/types/catalog";
 export function SiteHeader({ locale }: { locale: Locale }) {
   const d = getDictionary(locale).site;
   const pathname = usePathname();
+  const { items } = useCartState();
+  const cartCount = (items ?? []).reduce((sum, item) => sum + item.quantity, 0);
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -49,7 +52,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
               router.push(switchLocalePath(pathname + window.location.search + window.location.hash, alternate));
             }}>{locale === "en" ? "中文" : "EN"}</Link>
             <span className="h-4 w-px bg-ink/15" aria-hidden="true" />
-            <Link href={localePath(locale, "cart")} className="icon-button" aria-label={d.bag} onClick={() => setOpen(false)}><BagIcon className="h-5 w-5" /></Link>
+            <Link href={localePath(locale, "cart")} className="icon-button relative" aria-label={`${d.bag}${cartCount ? ` (${cartCount})` : ""}`} onClick={() => setOpen(false)}><BagIcon className="h-5 w-5" />{cartCount > 0 && <span className="absolute right-0 top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-ink px-1 text-[9px] text-cream" aria-hidden="true">{cartCount}</span>}</Link>
             <button ref={toggleRef} className="icon-button lg:hidden" aria-label={open ? d.closeMenu : d.menu} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" className="h-6 w-6">{open ? <path d="m5 5 14 14M5 19 19 5" /> : <path d="M4 7h16M4 12h16M4 17h16" />}</svg>
             </button>
