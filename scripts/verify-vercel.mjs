@@ -4,6 +4,8 @@ import { readFile } from "node:fs/promises";
 const paths = JSON.parse(await readFile(".next/server/app-paths-manifest.json", "utf8"));
 const server = JSON.parse(await readFile(".next/required-server-files.json", "utf8"));
 assert.notEqual(server.config.output, "export", "Vercel must use the native Next.js server build");
+assert.ok(server.config.pageExtensions.includes("ts"), "Native route.ts must be discoverable");
+assert.ok(server.config.pageExtensions.every(extension => !extension.includes(".")), "Vercel route packaging requires standard file extensions");
 assert.ok(paths["/api/[...path]/route"], "Native Next API entrypoint is missing");
 for (const route of ["/[locale]/page", "/[locale]/contact/page", "/[locale]/checkout/page", "/[locale]/privacy/page", "/sitemap.xml/route"]) {
   assert.ok(paths[route], `Missing native route: ${route}`);
